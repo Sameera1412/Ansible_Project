@@ -1,0 +1,24 @@
+[ec2-user@ip-172-31-24-30 ansible_project]$ cat playbook.yml
+---
+- name: Play 1
+  hosts: all
+  become: True
+  tasks:
+    - name: Copy File
+      copy:
+        src: ./Sam.txt
+        dest: /home/ec2-user/Sameera.txt
+    - name: Add user
+      user:
+        name: Ansible-User
+        state: present
+
+- name: Play 2
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install Nginx webserver
+      dnf:
+        name: nginx
+        state: present
+...
