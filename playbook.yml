@@ -1,23 +1,17 @@
 ---
-- name: Play 1
+- name: install and configure httpd
   hosts: all
-  become: True
+  become: "{{value}}"
+  vars_files:
+    - ./vars.yml
   tasks:
-    - name: Copy File
-      copy:
-        src: ./Sam.txt
-        dest: /home/ec2-user/Sameera.txt
-    - name: Add user
-      user:
-        name: Ansible-User
-        state: present
-
-- name: Play 2
-  hosts: all
-  become: yes
-  tasks:
-    - name: Install Nginx webserver
-      dnf:
-        name: nginx
-        state: present
+   - name: Installing httpd
+     ansible.builtin.yum:
+       name: "{{package_name}}"
+       state: latest
+   - name: Start service httpd, if not started
+     ansible.builtin.service:
+       name: "{{service_name}}"
+       state: started
+       enabled: yes
 ...
