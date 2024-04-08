@@ -1,0 +1,9 @@
+---
+service_name: httpd
+package_name: httpd
+value: true
+group_names:
+  - sales1
+  - marketing1
+  - HR1
+...
