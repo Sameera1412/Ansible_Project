@@ -6,7 +6,7 @@
 # http://docs.ansible.com/ansible/latest/modules/hostname_module.html
   - name: Set the hostname
     hostname: 
-     name: 172.31.18.171
+     name: "{{ Servername }}
 
 # We need the Epel repository to install nginx
   - name: Install epel release for nginx
