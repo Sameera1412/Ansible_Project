@@ -4,7 +4,7 @@
   become: yes
   tasks:
     - name: Install Nginx webserver
-      yum:
+      dnf:
         name: nginx
         state: present
 ...
