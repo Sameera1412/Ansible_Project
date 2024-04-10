@@ -10,13 +10,13 @@
 
 # We need the Epel repository to install nginx
   - name: Install epel release for nginx
-    yum: 
+    dnf: 
      name: epel-release 
      state: present
 
 # http://docs.ansible.com/ansible/latest/modules/yum_module.html
   - name: Install a list of packages - Redhat
-    yum: name={{item}} state=present
+    dnf: name={{item}} state=present
     with_items:
        - epel-release
        - nginx
