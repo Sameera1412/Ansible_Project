@@ -7,7 +7,7 @@ pipeline
     {
       steps
       {
-        ansiblePlaybook become: true, credentialsId: 'Ansible_client_credentials', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory', playbook: 'nginx.yml', vaultTmpPath: ''
+        ansiblePlaybook become: true, credentialsId: 'Ansible_client_credentials', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory', playbook: 'httpd.yml', vaultTmpPath: ''
       }
     }
   }
