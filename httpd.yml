@@ -1,0 +1,10 @@
+---
+- name: HTTPD
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install HTTPD webserver
+      dnf:
+        name: httpd
+        state: present
+...
